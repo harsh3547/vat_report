@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<menuitem name = "Tax Reporting" id = "sub_menu_tax_report" parent="account.menu_finance" sequence="5" groups="account.group_account_manager,account.group_account_user"/>
+	
+		<record id="vat_report_form" model="ir.ui.view">
+			<field name="name">vat_report_form_view</field>
+			<field name="model">vat.report.form</field>
+			<field name="arch" type="xml">
+				<form string="vat" version="7.0">
+						<group>
+							<field name="company" readonly="1"/>
+							<field name="tax_code" readonly="1"/>
+							<field name="vat_code" readonly="1"/>
+							<field name="address" readonly="1"/>
+							<field name="email" readonly="1"/>
+							<field name="registration_no"/>
+							<field name="code_custom"/>
+							<field name="partner_1"/>
+							<field name="partner_2"/>
+						</group>
+						<group>
+		                	<field name="field_11"/>
+							<field name="field_12"/>
+							<field name="field_13"/>
+							<field name="field_14"/>
+							<field name="field_15"/>
+							<field name="field_16"/>
+							<field name="field_17"/>
+							<field name="field_18"/>
+							<field name="field_19"/>
+							<field name="field_20"/>
+							<field name="field_21"/>
+							<field name="field_22"/>
+							<field name="field_23"/>
+							<field name="field_24"/>
+							<field name="field_25"/>
+							<field name="field_26"/>
+							<field name="field_27"/>
+							<field name="field_28"/>
+							<field name="field_29"/>
+							<field name="field_30"/>
+							<field name="field_31"/>
+							<field name="field_32"/>
+							<field name="field_33"/>
+							<field name="field_34"/>
+							<field name="field_35"/>
+		                </group>
+				</form>
+			</field>
+		</record>
+
+		<record id="vat_report_trees" model="ir.ui.view">
+			<field name="name">vat_report_tree</field>
+			<field name="model">vat.report.form</field>
+			<field name="arch" type="xml">
+				<tree string="vat">
+					<field name="company" />
+					<field name="tax_code"/>
+					<field name="vat_code"/>
+					<field name="address"/>
+					<field name="email"/>
+				</tree>
+			</field>
+		</record>
+				
+		<record id="action_vat_report" model="ir.actions.act_window">
+			<field name="name">VAT Reports</field>
+			<field name="res_model">vat.report.form</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<menuitem action="action_vat_report" id="menu_action_vat_report"
+		 name="Vat Report Settings" parent="sub_menu_tax_report" sequence="3" groups="account.group_account_manager,account.group_account_user"/>
+	</data>
+</openerp> 		
