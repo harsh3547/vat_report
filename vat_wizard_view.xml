@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record id="vat_report_wizard" model="ir.ui.view">
+			<field name="name">vat_report_wizard_view</field>
+			<field name="model">vat.report.wizard</field>
+			<field name="arch" type="xml">
+				<form string="vat" version="7.0">
+					<group>
+							<field name="name"/>
+					</group>
+					<group>
+							<field name="field_81" on_change="change_81(field_81,field_82)" />
+							<field name="field_82" on_change="change_82(field_81,field_82)" />
+					</group>
+					<group>
+							<field name="field_91" on_change="change_91(field_91,field_92)" />
+							<field name="field_92" on_change="change_92(field_91,field_92)" />
+					</group>
+					<group>
+                        <field name="period_id"/>
+	                	<field name="partner_1"/>
+						<field name="partner_2"/>
+	                </group>
+				</form>
+			</field>
+		</record> 
+		<record id="vat_report_trees_wizard" model="ir.ui.view">
+			<field name="name">vat_report_tree_wizard</field>
+			<field name="model">vat.report.wizard</field>
+			<field name="arch" type="xml">
+				<tree string="vat">
+					<field name="name"/>
+					<field name="period_id"/>
+					<field name="partner_1"/>
+					<field name="partner_2"/>
+					<field name="field_81" />
+					<field name="field_82"/>
+					<field name="field_91"/>
+					<field name="field_92"/>
+				</tree>
+			</field>
+		</record>
+		<record id="action_vat_report_wizard" model="ir.actions.act_window">
+			<field name="name">Vat Reports</field>
+			<field name="res_model">vat.report.wizard</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<menuitem action="action_vat_report_wizard" id="menu_action_vat_report_wizard"
+		 name="Vat Report" parent="sub_menu_tax_report" sequence="2" groups="account.group_account_user,account.group_account_manager"/>
+	</data>
+</openerp>
